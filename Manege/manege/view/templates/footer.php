@@ -1,4 +1,4 @@
-<footer>&copy; Jouw Naam</footer>
+<footer>&copy; Abdulrahman Aboudaoud</footer>
 </div><!-- end container div -->
 </body>
 </html>

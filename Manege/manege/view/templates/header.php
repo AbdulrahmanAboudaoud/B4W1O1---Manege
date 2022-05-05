@@ -15,7 +15,14 @@
 <div id="container">
 <nav>
 	<ul>
-		<li><a href="<?=URL?>employee/index"><i class="fas fa-users"></i></a></li>
-		<li><a href="<?=URL?>employee/create"><i class="fas fa-user-plus"></i></a></li>
+		<li>
+			<a href="<?=URL?>horses/index"><i></i>HORSES</a>
+		</li>
+		<li>
+			<a href="<?=URL?>customers/index"><i>CUSTOMERS</i></a>
+		</li>
+		<li>
+			<a href="<?=URL?>reservation/index"><i>RESERVATION</i></a>
+		</li>
 	</ul>
 </nav>
