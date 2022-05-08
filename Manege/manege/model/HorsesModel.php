@@ -105,14 +105,15 @@ function createHorse($horseName,$horseAge,$horseType){
         $conn = null;
  }
 
- function destroyHorse($id){
+ function destroyH($id){
     // Maak hier de code om een medewerker te verwijderen
     try{
         $conn=openDatabaseConnection();
-        $stmt = $conn->prepare("DELETE FROM horse WHERE id = :id");
-        $stmt->bindParam(":id", $id);
+        $sql = "DELETE FROM horses WHERE id = :id";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":id", $id);
        
-        $stmt->execute();
+        $query->execute();
       }
     
       catch(PDOException $e){

@@ -20,8 +20,8 @@
 		<td><?php echo $horse["HorseAge"]; ?></td>
 		<td><?php echo $horse["HorseType"]; ?></td>
 
-		<td><a class="btn text-primary" herf= "<?= URL ?>horses/editHorse/<?= $horse['id'] ?>"><i class="far fa-edit"></i> edit </a></td>
-		<td><a class="btn text-primary" herf= "<?= URL ?>horses/deleteHorse/<?= $horse['id'] ?>"><i class="far fa-trash-alt"></i> delete </a></td>
+		<td><a class="btn text-primary" href= "<?= URL ?>horses/editHorse/<?= $horse['id'] ?>"><i class="far fa-edit"></i> edit </a></td>
+		<td><a class="btn text-primary" href= "<?= URL ?>horses/deleteHorse/<?= $horse['id'] ?>"><i class="far fa-trash-alt"></i> delete </a></td>
 
 		</tr>
 		<?php } ?>
@@ -29,7 +29,7 @@
 	</table>
 
 	<div>
-		<a class="btn text-primary" herf="<?=URL?>horses/addHorse"> Add New Horse</a>
+		<a class="btn text-primary" href="<?=URL?>horses/addHorse"> Add New Horse</a>
 	</div>
 
 

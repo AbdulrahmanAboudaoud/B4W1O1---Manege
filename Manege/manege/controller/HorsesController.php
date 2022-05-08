@@ -43,9 +43,9 @@ function deleteHorse($id){
 
 }
 
-function destroyH($id){
+function destroyHorse($id){
     
-    destroyHorse($id);
+    destroyH($id);
     header("location: ".URL."horses/index");
 	
     
