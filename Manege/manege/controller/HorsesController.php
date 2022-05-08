@@ -28,8 +28,8 @@ function editHorse($id){
     render("horses/update", array("horse" => $getHorse));
 }
 
-function update(){
-    updateHorse($id, $_POST["horseName"], $_POST["horseType"], $_POST["horseAge"]);
+function updateHorse($id){
+    updateH($id, $_POST["horseName"], $_POST["horseType"], $_POST["horseAge"]);
     header("location: ".URL."horses/index");
     
 

@@ -67,15 +67,16 @@ function getHorse($id){
     return $result;
  }
 
-function createHorse($horseName,$horseAge,$horseType){
+function createHorse($horseName,$horseType,$horseAge){
     // Maak hier de code om een medewerker toe te voegen
   try{
     $conn=openDatabaseConnection();
-    $stmt = $conn->prepare("INSERT INTO horse(HorseName, HorseType,HorseAge ) VALUES(:horseName, :horseType, :horseAge)");
-    $stmt->bindParam(":horseName", $horseName);
-    $stmt->bindParam(":horseType", $horseType);
-    $stmt->bindParam(":horseAge", $horseAge);
-    $stmt->execute();
+    $sql = "INSERT INTO horses(HorseName, HorseAge, HorseType) VALUES(:horseName, :horseAge, :horseType)";
+    $query = $conn->prepare($sql);
+    $query->bindParam(":horseName", $horseName);
+    $query->bindParam(":horseType", $horseType);
+    $query->bindParam(":horseAge", $horseAge);
+    $query->execute();
   }
 
   catch(PDOException $e){
@@ -86,16 +87,17 @@ function createHorse($horseName,$horseAge,$horseType){
  }
 
 
- function updateHorse($id,$horseName,$horseAge,$horseType){
+ function updateH($id,$horseName,$horseType,$horseAge){
     // Maak hier de code om een medewerker te bewerken
     try{
         $conn=openDatabaseConnection();
-        $stmt = $conn->prepare("UPDATE horses SET HorseName = :horseName, HorseType = :horseType, HorseAge = :horseAge WHERE id = :id ");
-        $stmt->bindParam(":id", $id);
-        $stmt->bindParam(":horseName", $horseName);
-        $stmt->bindParam(":horseType", $horseType);
-        $stmt->bindParam(":horseAge", $horseAge);
-        $stmt->execute();
+        $sql = "UPDATE horses SET HorseName = :horseName, HorseType = :horseType ,HorseAge = :horseAge WHERE id = :id";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":id", $id);
+        $query->bindParam(":horseName", $horseName);
+        $query->bindParam(":horseType", $horseType);
+        $query->bindParam(":horseAge", $horseAge);
+        $query->execute();
       }
     
       catch(PDOException $e){
