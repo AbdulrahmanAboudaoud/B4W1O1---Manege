@@ -21,7 +21,7 @@ function createNewHorse(){
     header("location: index");
 }
 
-function edit($id){
+function editHorse($id){
    
     $getHorse = getHorse($id);
    
@@ -43,7 +43,7 @@ function deleteHorse($id){
 
 }
 
-function destroy($id){
+function destroyH($id){
     
     destroyHorse($id);
     header("location: ".URL."horses/index");
