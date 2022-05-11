@@ -87,7 +87,7 @@ function createCustomer($customerName,$customerPhoneNumber,$customerAdress){
  }
 
 
- function updateH($id,$customerName,$customerPhoneNumber,$customerAdress){
+ function updateC($id,$customerName,$customerPhoneNumber,$customerAdress){
     // Maak hier de code om een medewerker te bewerken
     try{
         $conn=openDatabaseConnection();
