@@ -1,16 +1,41 @@
-	<?php
-		// maak een overzicht lijst van ALLE personen
-	?>
-	<h1>Overzicht van personen</h1>
-	<ul>
-		<li>
-			<span>Karel is 12 jaar</span>
-			<?php
-			// de opbouw van de link bepaald welke method in welke controller aangeroepen wordt.
-			// het woordje "employee" in de url betekent dat het framework moet zoeken naar een controller genaamd "EmployeeController".
-			// Hij maakt van de eerste letter een hoofdletter en plakt er zelf "Controller" achter.
-			// Het woordje "update" of "delete" betekent dat hij in deze controller moet zoeken naar een method met deze naam.
-			?>
-			<a href="/employee/update/1">Wijzigen</a> <a href="/employee/delete/1">Verwijderen</a>
-		</li>
-	</ul>
+<div>
+<table>
+
+<thead>
+<tr>
+
+<th>Customer Name : </th>
+<th>Customer Phone Number : </th>
+<th>Customer Adress :</th>
+
+
+
+</tr>
+</thead>
+<tbody>
+	<?php foreach($customers as $customer ){ ?>
+
+		<tr>
+		<td><?php echo $customer["CustomerName"]; ?></td>
+		<td><?php echo $customer["CustomerPhoneNumber"]; ?></td>
+		<td><?php echo $customer["CustomerAdress"]; ?></td>
+
+		<td><a class="btn text-primary" href= "<?= URL ?>customers/editCustomer/<?= $customer['id'] ?>"><i class="far fa-edit"></i> edit </a></td>
+		<td><a class="btn text-primary" href= "<?= URL ?>customers/deleteCustomer/<?= $customer['id'] ?>"><i class="far fa-trash-alt"></i> delete </a></td>
+
+		</tr>
+		<?php } ?>
+	</tbody>
+	</table>
+
+	<div>
+		<a class="btn text-primary" href="<?=URL?>customers/addCustomer"> Add New Horse</a>
+	</div>
+
+
+
+
+
+
+
+</div>
