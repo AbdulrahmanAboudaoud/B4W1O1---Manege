@@ -1,6 +1,6 @@
 <?php
 
-function getAllEmployees(){
+function getAllCustomers(){
   // Met het try statement kunnen we code proberen uit te voeren. Wanneer deze
   // mislukt kunnen we de foutmelding afvangen en eventueel de gebruiker een
   // nette foutmelding laten zien. In het catch statement wordt de fout afgevangen
@@ -9,7 +9,7 @@ function getAllEmployees(){
        $conn=openDatabaseConnection();
    
        // Zet de query klaar door middel van de prepare method
-       $stmt = $conn->prepare("SELECT * FROM employees");
+       $stmt = $conn->prepare("SELECT * FROM customers");
 
        // Voer de query uit
        $stmt->execute();
@@ -34,14 +34,14 @@ function getAllEmployees(){
    return $result;
 }
 
-function getEmployee($id){
+function getCustomer($id){
     try {
         // Open de verbinding met de database
         $conn=openDatabaseConnection();
  
         // Zet de query klaar door midel van de prepare method. Voeg hierbij een
         // WHERE clause toe (WHERE id = :id. Deze vullen we later in de code
-        $stmt = $conn->prepare("SELECT * FROM employees WHERE id = :id");
+        $stmt = $conn->prepare("SELECT * FROM customers WHERE id = :id");
         // Met bindParam kunnen we een parameter binden. Dit vult de waarde op de plaats in
         // We vervangen :id in de query voor het id wat de functie binnen is gekomen.
         $stmt->bindParam(":id", $id);
@@ -67,19 +67,65 @@ function getEmployee($id){
     return $result;
  }
 
-function createEmployee($data){
+function createCustomer($customerName,$customerPhoneNumber,$customerAdress){
     // Maak hier de code om een medewerker toe te voegen
+  try{
+    $conn=openDatabaseConnection();
+    $sql = "INSERT INTO customers(CustomerName, CustomerPhoneNumber, CustomerAdress) VALUES(:customerName, :customerPhoneNumber, :customerAdress)";
+    $query = $conn->prepare($sql);
+    $query->bindParam(":customerName", $customerName);
+    $query->bindParam(":customerPhoneNumber", $customerPhoneNumber);
+    $query->bindParam(":customerAdress", $customerAdress);
+    $query->execute();
+  }
 
+  catch(PDOException $e){
+
+    echo "Connection failed: " . $e->getMessage();
+}
+    $conn = null;
  }
 
 
- function updateEmployee($data){
+ function updateH($id,$customerName,$customerPhoneNumber,$customerAdress){
     // Maak hier de code om een medewerker te bewerken
+    try{
+        $conn=openDatabaseConnection();
+        $sql = "UPDATE customers SET  = CustomerName = :customerName,  = CustomerPhoneNumber : customerPhoneNumber,CustomerAdress = :customerAdress WHERE id = :id";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":id", $id);
+        $query->bindParam(":customerName", $customerName);
+        $query->bindParam(":customerPhoneNumber", $customerPhoneNumber);
+        $query->bindParam(":customerAdress", $customerAdress);
+        $query->execute();
+      }
+    
+      catch(PDOException $e){
+    
+        echo "Connection failed: " . $e->getMessage();
+    }
+        $conn = null;
  }
 
- function deleteEmployee($id){
+ function destroyC($id){
     // Maak hier de code om een medewerker te verwijderen
- }
+    try{
+        $conn=openDatabaseConnection();
+        $sql = "DELETE FROM customers WHERE id = :id";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":id", $id);
+       
+        $query->execute();
+      }
+    
+      catch(PDOException $e){
+    
+        echo "Connection failed: " . $e->getMessage();
+    }
+        $conn = null;
+     }
+    
+ 
 
 
 ?>
