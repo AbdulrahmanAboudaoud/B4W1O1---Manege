@@ -1,52 +1,55 @@
 <?php
+require(ROOT . "model/CustomerModel.php");
+require(ROOT . "model/HorsesModel.php");
 require(ROOT . "model/ReservationModel.php");
 
 
 function index()
 {
-    //1. Haal alle medewerkers op uit de database (via de model) en sla deze op in een variable
    
-    //2. Geef een view weer en geef de variable met medewerkers hieraan mee
+    $getAllReservations = getAllReservations();
+    render("reservation/index", array("reservation" =>$getAllReservations));
+    
    
 }
 
-function create(){
-    //1. Geef een view weer waarin een formulier staat voor het aanmaken van een medewerker
+function addReservation(){
+ 
+ render("reservation/create");
+}
+
+function createNewReservation(){
+    createReservation($_POST["customerName"],$_POST["horseName"],$_POST["startTime"],$_POST["numberOfRides"],$_POST["totalPrice"]);
+    header("location: index");
+}
+
+function editReservation($id){
+   
+    $getReservation = getReservation($id);
+   
+    render("reservation/update", array("reservation" => $getReservation));
+}
+
+function updateReservation($id){
+    updateR($id,$_POST["customerName"],$_POST["horseName"],$_POST["startTime"],$_POST["numberOfRides"],$_POST["totalPrice"]);
+    header("location: ".URL."reservation/index");
+    
 
 }
 
-function store(){
-    //1. Maak een nieuwe medewerker aan met de data uit het formulier en sla deze op in de database
-
-    //2. Bouw een url op en redirect hierheen
-
-}
-
-function edit($id){
-    //1. Haal een medewerker op met een specifiek id en sla deze op in een variable
-
-    //2. Geef een view weer voor het updaten en geef de variable met medewerker hieraan mee
+function deleteReservation($id){
+   
+    $getReservation = getReservation($id);
+    render("reservation/delete", array("reservation" =>$getReservation));
+   
 
 }
 
-function update(){
-    //1. Update een bestaand persoon met de data uit het formulier en sla deze op in de database
-
-    //2. Bouw een url en redirect hierheen
-
-}
-
-function delete($id){
-    //1. Haal een medewerker op met een specifiek id en sla deze op in een variable
-
-    //2. Geef een view weer voor het verwijderen en geef de variable met medewerker hieraan mee
-
-}
-
-function destroy($id){
-    //1. Delete een medewerker uit de database
-
-	//2. Bouw een url en redirect hierheen
+function destroyReservation($id){
+    
+    destroyR($id);
+    header("location: ".URL."reservation/index");
+	
     
 }
 ?>
