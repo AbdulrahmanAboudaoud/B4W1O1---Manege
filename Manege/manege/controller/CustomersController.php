@@ -29,7 +29,7 @@ function editCustomer($id){
 }
 
 function updateCustomer($id){
-    updateC($id, $_POST["customerName"],$_POST["customerPhoneNumber"],$_POST["customerAdress"] );
+    updateC($id, $_POST["customerName"],$_POST["customerPhoneNumber"],$_POST["customerAdress"]);
     header("location: ".URL."customers/index");
     
 

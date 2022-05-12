@@ -18,6 +18,11 @@
 			<label class="lead" for="">Horse Age</label>
             <input class="form-control" name="horseAge"  type="number" required value="<?php echo $horse["HorseAge"]; ?>">
 		</div>	
+
+		<div class="form-group">
+			<label class="lead" for="">Horse Height</label>
+            <input class="form-control" name="horseHeight"  type="number" required value="<?php echo $horse["Height"]; ?>">
+		</div>
 	    <!--  Bouw hier de rest van je formulier   -->
 
 		<input type="submit" name="submit" class="btn btn-primary" value="Update">

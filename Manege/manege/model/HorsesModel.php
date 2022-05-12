@@ -71,11 +71,12 @@ function createHorse($horseName,$horseType,$horseAge){
     // Maak hier de code om een medewerker toe te voegen
   try{
     $conn=openDatabaseConnection();
-    $sql = "INSERT INTO horses(HorseName, HorseAge, HorseType) VALUES(:horseName, :horseAge, :horseType)";
+    $sql = "INSERT INTO horses(HorseName, HorseAge, HorseType, Height) VALUES(:horseName, :horseAge, :horseType, :horseHeight)";
     $query = $conn->prepare($sql);
     $query->bindParam(":horseName", $horseName);
     $query->bindParam(":horseType", $horseType);
     $query->bindParam(":horseAge", $horseAge);
+    $query->bindParam(":horseHeight", $horseHeight);
     $query->execute();
   }
 
@@ -87,16 +88,17 @@ function createHorse($horseName,$horseType,$horseAge){
  }
 
 
- function updateH($id,$horseName,$horseType,$horseAge){
+ function updateH($id,$horseName,$horseType,$horseAge,$horseHeight){
     // Maak hier de code om een medewerker te bewerken
     try{
         $conn=openDatabaseConnection();
-        $sql = "UPDATE horses SET HorseName = :horseName, HorseType = :horseType ,HorseAge = :horseAge WHERE id = :id";
+        $sql = "UPDATE horses SET HorseName = :horseName, HorseType = :horseType ,HorseAge = :horseAge, Height = :horseHeight  WHERE id = :id";
         $query = $conn->prepare($sql);
         $query->bindParam(":id", $id);
         $query->bindParam(":horseName", $horseName);
         $query->bindParam(":horseType", $horseType);
         $query->bindParam(":horseAge", $horseAge);
+        $query->bindParam(":horseHeight", $horseHeight);
         $query->execute();
       }
     

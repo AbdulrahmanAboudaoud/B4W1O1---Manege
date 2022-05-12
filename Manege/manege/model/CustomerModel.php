@@ -91,7 +91,7 @@ function createCustomer($customerName,$customerPhoneNumber,$customerAdress){
     // Maak hier de code om een medewerker te bewerken
     try{
         $conn=openDatabaseConnection();
-        $sql = "UPDATE customers SET  = CustomerName = :customerName,  = CustomerPhoneNumber : customerPhoneNumber,CustomerAdress = :customerAdress WHERE id = :id";
+        $sql = "UPDATE customers SET  CustomerName = :customerName, CustomerPhoneNumber = :customerPhoneNumber, CustomerAdress = :customerAdress WHERE id = :id";
         $query = $conn->prepare($sql);
         $query->bindParam(":id", $id);
         $query->bindParam(":customerName", $customerName);

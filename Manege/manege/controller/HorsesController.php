@@ -17,7 +17,7 @@ function addHorse(){
 }
 
 function createNewHorse(){
-    createHorse($_POST["horseName"],$_POST["horseType"],$_POST["horseAge"]);
+    createHorse($_POST["horseName"],$_POST["horseType"],$_POST["horseAge"],$_POST["horseHeight"]);
     header("location: index");
 }
 
@@ -29,7 +29,7 @@ function editHorse($id){
 }
 
 function updateHorse($id){
-    updateH($id, $_POST["horseName"], $_POST["horseType"], $_POST["horseAge"]);
+    updateH($id, $_POST["horseName"], $_POST["horseType"], $_POST["horseAge"],$_POST["horseHeight"]);
     header("location: ".URL."horses/index");
     
 
