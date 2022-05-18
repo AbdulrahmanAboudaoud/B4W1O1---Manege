@@ -8,7 +8,6 @@ function index()
     $getAllHorses = getAllHorses();
     render("horses/index", array("horses" =>$getAllHorses));
     
-   
 }
 
 function addHorse(){
