@@ -48,7 +48,7 @@
 	</table>
 
 	<div class ="col-md-12 text-center">
-		<a class="btn text-primary border" href="<?=URL?>horses/addHorse"> Add New Horse</a>
+		<a class="btn text-white-50  bg-dark border" href="<?=URL?>horses/addHorse"> Add New Horse</a>
 	</div>
 
 

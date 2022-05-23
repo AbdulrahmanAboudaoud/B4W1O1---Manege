@@ -1,4 +1,4 @@
-<h1>Add a new Customer :</h1>
+<h1 class="text-center">Add a new Customer :</h1>
 <div class="container">
 
 <form  action="<?=URL?>customers/createNewCustomer" method="post">
@@ -19,7 +19,7 @@
     <input type="text" name="customerAdress" class="form-control">
 	</div>
 	
-    <input type="submit" class="btn btn-primary " value="Add new Customer">	
+    <input type="submit" class="btn text-white-50  bg-dark " value="Add new Customer">	
 
 </form>
 </div>

@@ -1,6 +1,6 @@
 
 
-<h1>Add a new Reservation :</h1>
+<h1 class= "text-center">Add a new Reservation :</h1>
 <div class="container">
 
 <form  action="<?=URL?>reservation/createNewReservation" method="post">
@@ -45,12 +45,8 @@
     <input type="number" name="numberOfRides" class="form-control">
 	</div>
 
-	<div class="form-group">
-    <label for="" class="lead">total price</label>
-    <input type="number" name="totalPrice" class="form-control">
-	</div>
 	
-    <input type="submit" class="btn btn-primary " value="Add new reservation">	
+    <input type="submit" class="btn text-white-50  bg-dark " value="Add new reservation">	
 
 </form>
 </div>

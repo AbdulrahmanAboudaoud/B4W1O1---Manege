@@ -67,7 +67,7 @@ function getHorse($id){
     return $result;
  }
 
-function createHorse($horseName,$horseType,$horseAge){
+function createHorse($horseName,$horseType,$horseAge,$horseHeight){
     // Maak hier de code om een medewerker toe te voegen
   try{
     $conn=openDatabaseConnection();

@@ -21,7 +21,7 @@ function addReservation(){
 }
 
 function createNewReservation(){
-    createReservation($_POST["customerName"],$_POST["horseName"],$_POST["startTime"],$_POST["numberOfRides"],$_POST["totalPrice"]);
+    createReservation($_POST["customerName"],$_POST["horseName"],$_POST["startTime"],$_POST["numberOfRides"]);
     header("location: index");
 }
 
@@ -33,7 +33,7 @@ function editReservation($id){
 }
 
 function updateReservation($id){
-    updateR($id,$_POST["customerName"],$_POST["horseName"],$_POST["startTime"],$_POST["numberOfRides"],$_POST["totalPrice"]);
+    updateR($id,$_POST["customerName"],$_POST["horseName"],$_POST["startTime"],$_POST["numberOfRides"]);
     header("location: ".URL."reservation/index");
     
 

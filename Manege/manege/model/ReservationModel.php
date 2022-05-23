@@ -74,17 +74,17 @@ function getReservation($id){
     return $result;
  }
 
-function createReservation($customerName,$horseName,$startTime,$numberOfRides,$totalPrice){
+function createReservation($customerName,$horseName,$startTime,$numberOfRides){
     // Maak hier de code om een medewerker toe te voegen
   try{
     $conn=openDatabaseConnection();
-    $sql = "INSERT INTO reservation(CustomerName,HorseName, StartTime, NumberOfRides, TotalPrice) VALUES(:customerName,:horseName, :startTime, :numberOfRides, :totalPrice)";
+    $sql = "INSERT INTO reservation(CustomerName,HorseName, StartTime, NumberOfRides) VALUES(:customerName,:horseName, :startTime, :numberOfRides)";
     $query = $conn->prepare($sql);
     $query->bindParam(":customerName", $customerName);
     $query->bindParam(":horseName", $horseName);
     $query->bindParam(":startTime", $startTime);
     $query->bindParam(":numberOfRides", $numberOfRides);
-    $query->bindParam(":totalPrice", $totalPrice);
+  
     $query->execute();
   }
 
@@ -96,18 +96,18 @@ function createReservation($customerName,$horseName,$startTime,$numberOfRides,$t
  }
 
 
- function updateR($id,$customerName,$horseName,$startTime,$numberOfRides,$totalPrice){
+ function updateR($id,$customerName,$horseName,$startTime,$numberOfRides){
     // Maak hier de code om een medewerker te bewerken
     try{
         $conn=openDatabaseConnection();
-        $sql = "UPDATE horses SET CustomerName = :customerName, HorseName = :horseName, StartTime = :startTime ,NumberOfRides = :numberOfRides, TotalPrice = :totalPrice  WHERE id = :id";
+        $sql = "UPDATE reservation SET CustomerName = :customerName, HorseName = :horseName, StartTime = :startTime ,NumberOfRides = :numberOfRides  WHERE id = :id";
         $query = $conn->prepare($sql);
         $query->bindParam(":id", $id);
         $query->bindParam(":customerName", $customerName);
         $query->bindParam(":horseName", $horseName);
         $query->bindParam(":startTime", $startTime);
         $query->bindParam(":numberOfRides", $numberOfRides);
-        $query->bindParam(":totalPrice", $totalPrice);
+        
         
         $query->execute();
       }
@@ -123,7 +123,7 @@ function createReservation($customerName,$horseName,$startTime,$numberOfRides,$t
     // Maak hier de code om een medewerker te verwijderen
     try{
         $conn=openDatabaseConnection();
-        $sql = "DELETE FROM customer WHERE id = :id";
+        $sql = "DELETE FROM reservation WHERE id = :id";
         $query = $conn->prepare($sql);
         $query->bindParam(":id", $id);
        

@@ -1,5 +1,7 @@
-<div>
-<table>
+<div class="container">
+<div class = "row justify-content-md-center">
+<div class ="col-md-auto">
+<table class= "table-bordered">
 
 <thead>
 <tr>
@@ -28,14 +30,16 @@
 	</tbody>
 	</table>
 
-	<div>
-		<a class="btn text-primary" href="<?=URL?>customers/addCustomer"> Add New Horse</a>
+	<div class ="col-md-12 text-center">
+		<a class="btn text-white-50  bg-dark border" href="<?=URL?>customers/addCustomer"> Add New Customer</a>
 	</div>
 
 
 
 
+	</div>
 
+</div>
 
 
 </div>

@@ -24,12 +24,12 @@
 		<td><?php echo $reservation["HorseName"]; ?></td>
 		<td><?php echo $reservation["StartTime"]; ?></td>
 		<td><?php echo $reservation["NumberOfRides"]; ?></td>
-		<td><?php echo $reservation["TotalPrice"]; ?></td>
+		<td><?php echo $reservation["NumberOfRides"] * 60 . "€"?></td>
 
 
 
 		<td><a class="btn text-primary" href= "<?= URL ?>reservation/editReservation/<?= $reservation['id'] ?>"><i class="far fa-edit"></i> edit </a></td>
-		<td><a class="btn text-primary" href= "<?= URL ?>reservation/deleteReservatiuon/<?= $reservation['id'] ?>"><i class="far fa-trash-alt"></i> delete </a></td>
+		<td><a class="btn text-primary" href= "<?= URL ?>reservation/deleteReservation/<?= $reservation['id'] ?>"><i class="far fa-trash-alt"></i> delete </a></td>
 
 		</tr>
 		<?php } ?>
@@ -37,7 +37,7 @@
 	</table>
 
 	<div class ="col-md-12 text-center">
-		<a class="btn text-primary border" href="<?=URL?>reservation/addReservation"> Add New Reservation</a>
+		<a class="btn text-white-50  bg-dark border" href="<?=URL?>reservation/addReservation"> Add New Reservation</a>
 	</div>
 
 

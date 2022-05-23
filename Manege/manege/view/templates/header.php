@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class ="h-100">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,18 +11,23 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 	
 	<link rel="stylesheet" href="<?= URL ?>/css/style.css">
 </head>
-<body>
+<body class = "d-flex flex-column h-100" >
+<main class ="flex-shrink-0>"
 <div id="container">
-<nav>
-	<ul>
-		<li>
-			<a href="<?=URL?>horses/index"><i></i>HORSES</a>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-5 ">
+
+	<span  class="border-right navbar-text px-2">  MANEGE </span>
+	
+	<ul class="navbar-nav mx-auto">
+		<li class="nav-item mx-4">
+			<a class="nav-link" href="<?=URL?>horses/index"><i></i>HORSES</a>
 		</li>
-		<li>
-			<a href="<?=URL?>customers/index"><i>CUSTOMERS</i></a>
+		<li class="nav-item mx-4">
+			<a class="nav-link" href="<?=URL?>customers/index"><i>CUSTOMERS</i></a>
 		</li>
-		<li>
-			<a href="<?=URL?>reservation/index"><i>RESERVATION</i></a>
+		<li class="nav-item mx-4">
+			<a class="nav-link" href="<?=URL?>reservation/index"><i>RESERVATION</i></a>
 		</li>
 	</ul>
+
 </nav>

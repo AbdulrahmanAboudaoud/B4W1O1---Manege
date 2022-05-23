@@ -1,4 +1,4 @@
-<h1>Add a new horse :</h1>
+<h1 class= "text-center">Add a new horse :</h1>
 <div class="container">
 
 <form  action="<?=URL?>horses/createNewHorse" method="post">
@@ -19,7 +19,12 @@
     <input type="number" name="horseAge" class="form-control">
 	</div>
 	
-    <input type="submit" class="btn btn-primary " value="Add new horse">	
+	<div class="form-group">
+    <label for="" class="lead">Horse Height</label>
+    <input type="number" name="horseHeight" class="form-control">
+	</div>
+	
+    <input type="submit" class="btn text-white-50  bg-dark " value="Add new horse">	
 
 </form>
 </div>
